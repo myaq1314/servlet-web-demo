@@ -1,0 +1,17 @@
+###
+GET http://127.0.0.1:8088/demo/health.html
+
+###
+GET http://127.0.0.1:8088/demo/haha.demo1
+
+###
+GET http://127.0.0.1:8088/demo/haha.demo2
+
+###
+GET http://127.0.0.1:8089/demo/health.html
+
+###
+GET http://127.0.0.1:8089/demo/haha.demo1
+
+###
+GET http://127.0.0.1:8089/demo/haha.demo2

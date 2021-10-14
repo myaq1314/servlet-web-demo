@@ -1,0 +1,59 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <context-param>
+        <param-name>servletDemoDate</param-name>
+        <param-value>20211014</param-value>
+    </context-param>
+
+    <!-- 注册自定义listener，可多个 -->
+    <listener>
+        <listener-class>org.czh.servlet_web.DemoListener</listener-class>
+    </listener>
+
+    <!-- 注册自定义servlet，可多个 -->
+    <servlet>
+        <servlet-name>demo1Servlet</servlet-name>
+        <servlet-class>org.czh.servlet_web.Demo1Servlet</servlet-class>
+        <init-param>
+            <param-name>initParam</param-name>
+            <param-value>demo1</param-value>
+        </init-param>
+        <load-on-startup>4</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>demo2Servlet</servlet-name>
+        <servlet-class>org.czh.servlet_web.Demo2Servlet</servlet-class>
+        <init-param>
+            <param-name>initParam</param-name>
+            <param-value>demo2</param-value>
+        </init-param>
+        <load-on-startup>4</load-on-startup>
+    </servlet>
+
+    <!-- 使用tomcat默认servlet default来处理html静态资源 -->
+    <servlet-mapping>
+        <!--suppress WebProperties -->
+        <servlet-name>jsp</servlet-name>
+        <url-pattern>*.jsp</url-pattern>
+    </servlet-mapping>
+    <!-- 自定义demo1Servlet -->
+    <servlet-mapping>
+        <servlet-name>demo1Servlet</servlet-name>
+        <url-pattern>*.demo1</url-pattern>
+    </servlet-mapping>
+    <!-- 自定义demo2Servlet -->
+    <servlet-mapping>
+        <servlet-name>demo2Servlet</servlet-name>
+        <url-pattern>*.demo2</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
